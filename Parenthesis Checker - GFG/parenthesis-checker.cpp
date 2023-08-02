@@ -27,8 +27,6 @@ class Solution
                 {
                 if(x[i] == ')' && stack[top - 1] == '(' || x[i] == '}' && stack[top - 1] == '{' || x[i] == ']' && stack[top - 1] == '[')
                 {
-                    if(stack.size() == 0)
-                    return false;
                     stack.pop_back();
                     top--;
                 }
