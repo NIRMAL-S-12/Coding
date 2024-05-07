@@ -4,8 +4,6 @@ public:
     {
         
         sort(nums.begin(), nums.end());
-        if(nums.size() == 1)
-            return 1;
         int k = 1;
         for(int i = 1 ; i < nums.size(); i++)
         {
