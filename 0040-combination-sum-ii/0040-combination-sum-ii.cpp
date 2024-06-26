@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    void fun(vector<vector<int>>&ans,  vector<int>v, int sum, int target, vector<int>&c, int i)
+    void fun(vector<int>&c, int target, int i , int sum, vector<vector<int>>&ans, vector<int>&v)
     {
         if(sum == target)
         {
@@ -15,21 +15,18 @@ public:
         {
             if(j > i && c[j] == c[j-1])
                 continue;
-            
             v.push_back(c[j]);
-            fun(ans,v,sum, target-c[j],c,j+1);
+            fun(c,target, j + 1, sum + c[j] , ans, v);
             v.pop_back();
         }
     }
     
-    
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) 
     {
-        sort(candidates.begin() ,candidates.end());
+        sort(candidates.begin() , candidates.end());
         vector<vector<int>>ans;
         vector<int> v;
-        int sum = 0;
-        fun(ans, v, sum, target, candidates,0);
+        fun(candidates, target, 0 , 0, ans, v);
         return ans;
     }
 };
