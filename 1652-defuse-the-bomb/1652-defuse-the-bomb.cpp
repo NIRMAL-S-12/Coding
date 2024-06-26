@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> decrypt(vector<int>& code, int k) 
     {
-        vector<int> ans(code.size(), 0);
+        vector<int> ans(code.size() , 0);
         if(k == 0)
         {
             for(int i = 0 ; i < code.size() ; i++)
@@ -11,7 +11,7 @@ public:
         }
         else if(k > 0)
         {
-            for(int i = 0 ; i < code.size(); i++)
+            for(int i = 0 ; i < code.size() ; i++)
             {
                 for(int j = 1 ; j <= k ; j++)
                 {
@@ -26,11 +26,13 @@ public:
             {
                 for(int j = 1 ; j <= -k ; j++)
                 {
-                    ans[i] += code[(i-j+code.size()) % code.size()];
+                    ans[i] += code[(i-j+code.size()) % code.size()]; 
                 }
             }
             return ans;
         }
         return {0};
+        
+        
     }
 };
