@@ -2,11 +2,10 @@ class Solution {
 public:
     int titleToNumber(string str) 
     {
-        int res = 0 , d;
-        for(int i = 0 ; i < str.size() ; i++)
+        int res = 0;
+        for(auto i : str)
         {
-            d = str[i] - 'A' + 1;
-            res = res * 26 + d;
+            res = res * 26 + (i - 'A' + 1);
         }
         return res;
         
