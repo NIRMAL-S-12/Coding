@@ -1,17 +1,12 @@
 class Solution {
 public:
-    int titleToNumber(string columnTitle) 
+    int titleToNumber(string str) 
     {
-        string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        int res = 0;
-        for(auto &i : columnTitle)
+        int res = 0 , d;
+        for(int i = 0 ; i < str.size() ; i++)
         {
-            for(int j = 0 ; j < 26 ; j++)
-            {
-                if(alpha[j] == i)
-                    
-            res = res * 26 + (j + 1);
-            }
+            d = str[i] - 'A' + 1;
+            res = res * 26 + d;
         }
         return res;
         
