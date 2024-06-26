@@ -5,9 +5,10 @@ public:
         string res ="";
         while(n)
         {
-            char c = 'A' + (n - 1) % 26;
-            res =  c + res;
-            n = (n-1)/26;
+            n--;
+            char ch = 'A' + n % 26;
+            res = ch + res;
+            n /= 26;
         }
         return res;
         
