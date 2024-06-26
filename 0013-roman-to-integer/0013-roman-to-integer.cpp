@@ -26,8 +26,8 @@ public:
         {
             if( fun(s[i+1]) > fun(s[i]))
             {
-                ans += (fun(s[i+1]) - fun(s[i]));
-                i+=1;
+                ans += (fun(s[i+1]) - fun(s[i]));i++;
+                
             }
             else
             {
